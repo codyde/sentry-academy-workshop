@@ -86,7 +86,7 @@ export const api = {
     create: (courseId: string, userId: string | undefined) => 
       fetchApi<any>('/enrollments', {
         method: 'POST',
-        body: JSON.stringify({ courseId }),
+        body: JSON.stringify({ courseId, userId }),
       }),
     getUserEnrollments: (userId: string) => fetchApi<any[]>(`/enrollments/user/${userId}`),
     getProgress: (enrollmentId: string) => fetchApi<any>(`/enrollments/${enrollmentId}/progress`),
